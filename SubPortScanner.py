@@ -22,7 +22,7 @@ def check(m,portnum):
         print bcolors.OKGREEN+"[+] Got one!, "+m+";"+ipadd+""+bcolors.ENDC
     else:
         print bcolors.WARNING+"Port is not open on: "+m+""+bcolors.ENDC
-print "SMTPVuln.py\nAuthor: MarkusHaas2002(Github) | Markusbug(Twitter)"
+print "SubPortScanner.py\nAuthor: MarkusHaas2002(Github) | Markusbug(Twitter)"
 try:
     domain = sys.argv[1]
     port = sys.argv[2]
