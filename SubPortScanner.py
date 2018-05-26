@@ -43,7 +43,7 @@ if port is "smtp":
     matching = [s for s in content if "mail" in s]
     print bcolors.OKBLUE+"[+] Port 25 selected."
     while i < len(matching):
-        check(matching[i],25)
+        check(matching[i],"25")
         i += 1
     sock.close()
     exit()
