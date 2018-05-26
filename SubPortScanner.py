@@ -17,7 +17,7 @@ def check(m,portnum):
     except:
         print bcolors.FAIL+"DNS Resolving failed on: "+m+""+bcolors.ENDC
         return
-    result = sock.connect_ex((ipadd, float(portnum)))
+    result = sock.connect_ex((ipadd, int(portnum)))
     if result == 0:
         print bcolors.OKGREEN+"[+] Got one!, "+m+";"+ipadd+""+bcolors.ENDC
     else:
