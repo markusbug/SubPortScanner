@@ -17,7 +17,7 @@ def check(m,portnum):
     except:
         print bcolors.FAIL+"DNS Resolving failed on: "+m+""+bcolors.ENDC
         return
-    result = sock.connect_ex((ipadd, int(portnum)))
+    result = sock.connect_ex((ipadd, iportnum))
     if result == 0:
         print bcolors.OKGREEN+"[+] Got one!, "+m+";"+ipadd+""+bcolors.ENDC
     else:
@@ -49,7 +49,7 @@ if port is "smtp":
     exit()
 else:
     while i < len(content):
-        check(content[i],port)
+        check(content[i],int(port))
         i += 1
     sock.close()
     exit()
