@@ -36,7 +36,7 @@ if port is None:
     print("No Parameter Provided.")
     exit()
 os.system("python Sublist3r/sublist3r.py -d "+ domain +" -o sublistresult/m.txt")
-with open("sublistresult/m.txt") as f:
+with open("Sublist3r/sublistresult/m.txt") as f:
     content = f.read().splitlines()
 i = 0
 if port is "smtp":
