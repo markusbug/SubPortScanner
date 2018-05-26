@@ -39,17 +39,8 @@ os.system("python Sublist3r/sublist3r.py -d "+ domain +" -o Sublist3r/sublistres
 with open("Sublist3r/sublistresult/m.txt") as f:
     content = f.read().splitlines()
 i = 0
-if port is "smtp":
-    matching = [s for s in content if "mail" in s]
-    print bcolors.OKBLUE+"[+] Port 25 selected."
-    while i < len(matching):
-        check(matching[i],"25")
-        i += 1
-    sock.close()
-    exit()
-else:
-    while i < len(content):
+while i < len(content):
         check(content[i],port))
         i += 1
-    sock.close()
-    exit()
+sock.close()
+exit()
