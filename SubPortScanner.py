@@ -40,7 +40,7 @@ with open("Sublist3r/sublistresult/m.txt") as f:
     content = f.read().splitlines()
 i = 0
 while i < len(content):
-        check(content[i],port))
+        check(content[i],port)
         i += 1
 sock.close()
 exit()
