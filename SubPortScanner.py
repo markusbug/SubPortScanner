@@ -35,8 +35,8 @@ if domain is None:
 if port is None:
     print("No Parameter Provided.")
     exit()
-os.system("python Sublist3r/sublist3r.py -d "+ domain +" -o Sublist3r/sublistresult/m.txt")
-with open("Sublist3r/sublistresult/m.txt") as f:
+os.system("sublist3r -d "+ domain +" -o m.txt")
+with open("m.txt") as f:
     content = f.read().splitlines()
 i = 0
 while i < len(content):
