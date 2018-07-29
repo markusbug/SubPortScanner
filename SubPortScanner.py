@@ -27,7 +27,7 @@ try:
     domain = sys.argv[1]
     port = sys.argv[2]
 except:
-    print("No Parameter Provided.\nUse: python SMTPVuln.py [Domain] [Port]")
+    print("No Parameter Provided.\nUse: python SubPortScanner.py [Domain] [Port]")
     exit()
 if domain is None:
     print("No Parameter Provided.")
