@@ -545,7 +545,8 @@ class NetcraftEnum(enumratorBaseThreaded):
         cookies = dict()
         cookies_list = cookie[0:cookie.find(';')].split("=")
         cookies[cookies_list[0]] = cookies_list[1]
-        cookies['netcraft_js_verification_response'] = hashlib.sha1(urllib.unquote(cookies_list[1])).hexdigest()
+        # hashlib.sha1 requires utf-8 encoded str
+        cookies['netcraft_js_verification_response'] = hashlib.sha1(urllib.unquote(cookies_list[1]).encode('utf-8')).hexdigest()
         return cookies
 
     def get_cookies(self, headers):
@@ -966,7 +967,7 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
     return subdomains
 
 
-if __name__ == "__main__":
+def interactive():
     args = parse_args()
     domain = args.domain
     threads = args.threads
@@ -979,3 +980,6 @@ if __name__ == "__main__":
         verbose = True
     banner()
     res = main(domain, threads, savefile, ports, silent=False, verbose=verbose, enable_bruteforce=enable_bruteforce, engines=engines)
+
+if __name__ == "__main__":
+    interactive()
