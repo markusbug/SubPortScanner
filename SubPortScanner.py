@@ -23,6 +23,7 @@ def check(m,portnum):
         print bcolors.OKGREEN+"[+] Got one!, "+m+";"+ipadd+""+bcolors.ENDC
     else:
         print bcolors.WARNING+"Port is not open on: "+m+""+bcolors.ENDC
+    sock.close()
 print "SubPortScanner.py\nAuthor: MarkusHaas2002(Github) | Markusbug(Twitter)"
 try:
     domain = sys.argv[1]
@@ -43,5 +44,4 @@ i = 0
 while i < len(content):
         check(content[i],port)
         i += 1
-sock.close()
 exit()
