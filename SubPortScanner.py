@@ -11,6 +11,7 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.settimeout(5)
 def check(m,portnum):
     try:
         ipadd = socket.gethostbyname(m)
