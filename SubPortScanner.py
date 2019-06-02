@@ -10,9 +10,9 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.settimeout(5)
 def check(m,portnum):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(5)
     try:
         ipadd = socket.gethostbyname(m)
     except:
